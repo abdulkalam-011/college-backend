@@ -1,11 +1,11 @@
 import "dotenv/config";
 import { app } from "./app.js";
 import { connectDB } from "./configs/db.js";
-import { connectClodinary } from "./configs/cloudiniry.js";
+import { connectCloudinary } from "./configs/cloudiniry.js";
+
 
 const PORT = process.env.PORT || 3000;
-
-connectClodinary();
+connectCloudinary();
 
 await connectDB()
   .then(() => {
