@@ -5,7 +5,11 @@ import { connectCloudinary } from "./configs/cloudiniry.js";
 
 
 const PORT = process.env.PORT || 3000;
-connectCloudinary();
+
+if (process.env.NODE_ENV == "production") {
+  console.log("Running in production mode");
+  connectCloudinary();
+}
 
 await connectDB()
   .then(() => {
